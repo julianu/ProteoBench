@@ -1,4 +1,4 @@
-name: Automated Release
+name: Update on server
 
 on: workflow_dispatch
 
