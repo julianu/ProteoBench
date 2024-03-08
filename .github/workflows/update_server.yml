@@ -6,6 +6,8 @@ jobs:
   update-server:
     name: Update on server
     runs-on: ubuntu-latest
+    env:
+      FOO: "v"  # TODO: use version tag here
     steps:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
@@ -13,4 +15,6 @@ jobs:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_KEY }}
-        script: whoami
+        script_stop: true
+        script: |
+          ~/update_script.sh
