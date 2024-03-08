@@ -17,4 +17,4 @@ jobs:
         key: ${{ secrets.SERVER_KEY }}
         script_stop: true
         script: |
-          ~/update_script.sh
+          sudo ~/callupdate.sh
